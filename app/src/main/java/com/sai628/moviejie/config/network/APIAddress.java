@@ -8,7 +8,7 @@ import com.sai628.moviejie.BuildConfig;
  */
 public class APIAddress
 {
-    private static final String API_DOMAIN = "http://" + BuildConfig.API_DOMAIN; // API域名
+    public static final String API_DOMAIN = "http://" + BuildConfig.API_DOMAIN;  // API域名
 
 
     /**
