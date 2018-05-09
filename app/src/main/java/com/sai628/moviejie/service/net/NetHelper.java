@@ -163,6 +163,12 @@ public class NetHelper
     }
 
 
+    public static void get(final Context context, final String url, final NetCallback netCallback, final SuccessHandler handler)
+    {
+        get(context, url, null, netCallback, handler);
+    }
+
+
     public static void get(final Context context, final String url, final ContentValues values,
                            final NetCallback netCallback, final SuccessHandler handler)
     {
