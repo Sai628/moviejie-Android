@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 上部外间隔默认值 -->
+    <dimen name="margin_top_size_default">20dp</dimen>
+    <!-- 底部外间隔默认值 -->
+    <dimen name="margin_bottom_size_default">20dp</dimen>
+    <!-- 上部内间隔默认值 -->
+    <dimen name="padding_top_size_default">20dp</dimen>
+    <!-- 底部内间隔默认值 -->
+    <dimen name="padding_bottom_size_default">20dp</dimen>
+
+    <!-- 内间隔(极小) -->
+    <dimen name="padding_micro">2dp</dimen>
+    <!-- 内间隔(微小) -->
+    <dimen name="padding_tiny">4dp</dimen>
+    <!-- 内间隔(小) -->
+    <dimen name="padding_small">8dp</dimen>
+    <!-- 内间隔(中) -->
+    <dimen name="padding_medium">16dp</dimen>
+
+    <!-- 内间隔常用尺寸 -->
+    <dimen name="padding_size_10">10dp</dimen>
+    <dimen name="padding_size_20">20dp</dimen>
+    <dimen name="padding_size_30">30dp</dimen>
+
+    <!-- 外间隔(极小) -->
+    <dimen name="margin_micro">2dp</dimen>
+    <!-- 外间隔(微小) -->
+    <dimen name="margin_tiny">4dp</dimen>
+    <!-- 外间隔(小) -->
+    <dimen name="margin_small">8dp</dimen>
+    <!-- 外间隔(中) -->
+    <dimen name="margin_medium">16dp</dimen>
+    <!-- 外间隔(大) -->
+    <dimen name="margin_large">24dp</dimen>
+
+    <!-- 外间隔常用尺寸 -->
+    <dimen name="margin_size_10">10dp</dimen>
+    <dimen name="margin_size_13">13dp</dimen>
+    <dimen name="margin_size_15">15dp</dimen>
+    <dimen name="margin_size_20">20dp</dimen>
+    <dimen name="margin_size_30">30dp</dimen>
+
+    <!-- 两段分隔之间的高度值(小) -->
+    <dimen name="layout_divide_height_small">16dp</dimen>
+    <!-- 两段分隔之间的高度值（默认） -->
+    <dimen name="layout_divide_height_default">20dp</dimen>
+    <!-- 两段分隔之间的高度值（大） -->
+    <dimen name="layout_divide_height_large">40dp</dimen>
+
+    <!-- 字号(微小) -->
+    <dimen name="text_fontsize_tiny">12sp</dimen>
+    <!-- 字号(小) -->
+    <dimen name="text_fontsize_small">14sp</dimen>
+    <!-- 字号(正常) -->
+    <dimen name="text_fontsize_normal">16sp</dimen>
+    <!-- 字号(中) -->
+    <dimen name="text_fontsize_middle">18sp</dimen>
+    <!-- 字号(大) -->
+    <dimen name="text_fontsize_large">20sp</dimen>
+    <!-- 字号(更大) -->
+    <dimen name="text_fontsize_biger">22sp</dimen>
+
+    <!-- 点击区域尺寸(极小) -->
+    <dimen name="click_area_size_tiny">30dp</dimen>
+    <!-- 点击区域尺寸(小) -->
+    <dimen name="click_area_size_small">38dp</dimen>
+    <!-- 点击区域尺寸(默认) -->
+    <dimen name="click_area_size_default">44dp</dimen>
+    <!-- 点击区域尺寸(中等) -->
+    <dimen name="click_area_size_medium">48dp</dimen>
+
+    <!-- 主界面侧边栏宽度 -->
+    <dimen name="slidemenu_width">270dp</dimen>
+
+    <!-- 底部导航标签图标大小 -->
+    <dimen name="bottom_tabbar_icon_size">24dp</dimen>
+    <!-- 消息提示小圆点大小 -->
+    <dimen name="icon_new_message_size">7dp</dimen>
+
+    <!-- 导航栏布局高度 -->
+    <dimen name="navbar_layout_height">56dp</dimen>
+    <!-- 导航菜单宽度 -->
+    <dimen name="navbar_item_menu_width">56dp</dimen>
+    <!-- 底部菜单布局高度 -->
+    <dimen name="bottom_layout_height">55dp</dimen>
+
+    <!-- 列表高度(小) -->
+    <dimen name="list_item_height_small">52dp</dimen>
+    <!-- 列表高度（默认） -->
+    <dimen name="list_item_height_default">60dp</dimen>
+    <!-- 列表高度（大） -->
+    <dimen name="list_item_height_large">100dp</dimen>
+    <!-- 列表项右侧'更多'图标大小 -->
+    <dimen name="listitem_more_icon_size">20dp</dimen>
+    <!-- 列表项左侧'菜单'图标大小 -->
+    <dimen name="listitem_menu_icon_size">24dp</dimen>
+    <!-- 列表项更新提示小圆点大小 -->
+    <dimen name="listitem_new_message_icon_size">7dp</dimen>
+
+    <!-- 加载框窗口宽度 -->
+    <dimen name="progress_dialog_view_width">200dp</dimen>
+    <!-- 按钮宽度 -->
+    <dimen name="button_width">250dp</dimen>
+    <!-- 按钮高度 -->
+    <dimen name="button_height_small">30dp</dimen>
+    <!-- 按钮高度 -->
+    <dimen name="button_height">42dp</dimen>
+    <!-- 浮动菜单大小 -->
+    <dimen name="float_menu_size">56dp</dimen>
+    <!-- 分享菜单布局弹窗宽度 -->
+    <dimen name="popup_window_share_menu_width">194dp</dimen>
+    <!-- 相册菜单布局弹窗宽度 -->
+    <dimen name="popup_window_album_menu_width">216dp</dimen>
+    <!-- 提示文字离顶部高度 -->
+    <dimen name="prompt_text_padding_top_size">45dp</dimen>
+    <!-- 提示文字离顶部高度 -->
+    <dimen name="prompt_search_type_padding_top_size">100dp</dimen>
+
+    <!-- 项目文件预览图片显示宽度 -->
+    <dimen name="gridview_item_project_file_width">72dp</dimen>
+    <!-- 项目文件预览图片显示高度 -->
+    <dimen name="gridview_item_project_file_height">72dp</dimen>
+
+    <!-- 选择照片预览子项尺寸 -->
+    <dimen name="gridview_item_image_preview_size">116dp</dimen>
+    <!-- 已选图片显示子项尺寸 -->
+    <dimen name="gridview_item_image_selected_size">45dp</dimen>
+
+    <!-- 九宫格控件的宽度 -->
+    <dimen name="gridlayout_width">224dp</dimen>
+    <!-- 九宫格控件子项的尺寸 -->
+    <dimen name="gridlayout_single_column_size">72dp</dimen>
+    <!-- 九宫格控件大图项的尺寸 -->
+    <dimen name="gridlayout_big_column_size">148dp</dimen>
+
+    <!-- 聊天更多按钮宽度 -->
+    <dimen name="chat_input_more_button_width">46dp</dimen>
+    <!-- 聊天更多按钮高度 -->
+    <dimen name="chat_input_more_button_height">44dp</dimen>
+    <!-- 聊天表情(小) -->
+    <dimen name="chat_content_emotion_size_small">20dp</dimen>
+    <!-- 聊天表情(正常) -->
+    <dimen name="chat_content_emotion_size_default">22dp</dimen>
+
+    <!-- 表情候选布局的高度 -->
+    <dimen name="emotion_gridview_height">200dp</dimen>
+    <!-- 表情候选图标的宽度 -->
+    <dimen name="emotion_icon_width">44dp</dimen>
+    <!-- 表情候选图标的高度 -->
+    <dimen name="emotion_icon_height">44dp</dimen>
+
+    <!-- 更多输入候选布局的高度 -->
+    <dimen name="chat_input_more_gridview_height">200dp</dimen>
+
+    <!-- 与logo相关(开始) -->
+    <!-- logo(极小) -->
+    <dimen name="logo_size_micro">20dp</dimen>
+    <!-- logo(微小) -->
+    <dimen name="logo_size_tiny">24dp</dimen>
+    <!-- logo(小) -->
+    <dimen name="logo_size_small">38dp</dimen>
+    <!-- logo(默认) -->
+    <dimen name="logo_size_default">42dp</dimen>
+    <!-- logo(大) -->
+    <dimen name="logo_size_large">50dp</dimen>
+
+    <!-- 用户logo(大) -->
+    <dimen name="logo_userinfo_size_large">72dp</dimen>
+    <!-- 与logo相关(结束) -->
+
+    <!-- 与标签图标尺寸相关 -->
+    <dimen name="icon_topic_size">20dp</dimen>
+
+    <!-- 展示位横幅宽度 -->
+    <dimen name="display_banner_width">320dp</dimen>
+    <!-- 展示位横幅高度 -->
+    <dimen name="display_banner_height">160dp</dimen>
+    <!-- 展示位标题文字布局高度 -->
+    <dimen name="display_title_layout_height">26dp</dimen>
+
+    <!-- 与RefreshableView相关(开始) -->
+    <dimen name="refreshableview_target_top">-56dp</dimen>
+    <dimen name="refreshableview_offset_top">10dp</dimen>
+
+    <!-- 与PagingListView/PagingGridView相关 -->
+    <dimen name="loading_view_progress_size">50dp</dimen>
+    <dimen name="loading_view_margin_layout">10dp</dimen>
+    <dimen name="loading_view_margin_right">5dp</dimen>
+
+    <!-- 自定义对话框的宽度 -->
+    <dimen name="custom_dialog_component_width">270dp</dimen>
+
+    <!-- 设置时间条项布局的高度 -->
+    <dimen name="picker_title_width">270dp</dimen>
+
+</resources>

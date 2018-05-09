@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 顶部菜单按钮点按底部变色 -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/navbar_item_clicked_bg"/>
+        </shape>
+    </item>
+
+</selector>

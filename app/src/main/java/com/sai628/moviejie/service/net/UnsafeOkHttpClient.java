@@ -1,0 +1,82 @@
+package com.sai628.moviejie.service.net;
+
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Protocol;
+
+import java.security.cert.CertificateException;
+import java.util.Arrays;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+
+/**
+ * @author Sai
+ * @ClassName:
+ * @Description:
+ * @date 26/09/2017 17:39
+ */
+public class UnsafeOkHttpClient
+{
+    public static OkHttpClient getUnsafeOkHttpClient()
+    {
+        try
+        {
+            // Create a trust manager that does not validate certificate chains
+            final TrustManager[] trustAllCerts = new TrustManager[]{
+                    new X509TrustManager()
+                    {
+                        @Override
+                        public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws
+                                CertificateException
+                        {
+                        }
+
+
+                        @Override
+                        public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws
+                                CertificateException
+                        {
+                        }
+
+
+                        @Override
+                        public java.security.cert.X509Certificate[] getAcceptedIssuers()
+                        {
+                            return null;
+                        }
+                    }
+            };
+
+            // Install the all-trusting trust manager
+            final SSLContext sslContext = SSLContext.getInstance("SSL");
+            sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
+
+            // Create an ssl socket factory with our all-trusting manager
+            final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+
+            OkHttpClient okHttpClient = new OkHttpClient();
+            okHttpClient.setSslSocketFactory(sslSocketFactory);
+            okHttpClient.setProtocols(Arrays.asList(Protocol.HTTP_1_1));
+            okHttpClient.setHostnameVerifier(new HostnameVerifier()
+            {
+                @Override
+                public boolean verify(String hostname, SSLSession session)
+                {
+                    return true;
+                }
+            });
+
+            return okHttpClient;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+}

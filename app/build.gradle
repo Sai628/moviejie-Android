@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '25.0.2'
+
+    useLibrary('org.apache.http.legacy')
+
+    dexOptions {
+        javaMaxHeapSize "2048"
+        preDexLibraries false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    defaultConfig {
+        applicationId "com.sai628.moviejie"
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName "v0.1"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            minifyEnabled false
+            zipAlignEnabled false
+        }
+        release {
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all {variant ->
+                variant.outputs.each {output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk'))
+                    {
+                        def fileName = "moviejie_${defaultConfig.versionName}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            aidl.srcDirs = ['src/main/java']
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'MissingTranslation'
+    }
+
+    dexOptions {
+        preDexLibraries = false
+    }
+
+    flavorDimensions("isProd")
+    productFlavors {
+        fake {
+            dimension "isProd"
+            buildConfigField("String", "API_DOMAIN", "\"localhost:5000\"")
+        }
+
+        prod {
+            dimension "isProd"
+            buildConfigField("String", "API_DOMAIN", "\"api-moviejie.sai628.com:5000\"")
+        }
+    }
+}
+
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+configurations {
+    all*.exclude group: 'com.android.support', module: 'support-v4'
+    all*.exclude group: 'com.android.support', module: 'support-annotations'
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
+    compile 'jp.wasabeef:picasso-transformations:2.1.0'
+}

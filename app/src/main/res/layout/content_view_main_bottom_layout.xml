@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View style="@style/my_divide_line_style_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_layout_height"
+        android:background="@color/tabbar_bg"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/content_view_main_bottom_layout_newest_ll"
+            style="@style/my_bottom_tabbar_item_layout_style">
+
+            <ImageView
+                style="@style/my_bottom_tabbar_item_icon_style"
+                android:src="@drawable/selector_tabbar_icon_newest"/>
+
+            <TextView
+                style="@style/my_bottom_tabbar_item_text_style"
+                android:text="@string/renewal"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/content_view_main_bottom_layout_movie_ll"
+            style="@style/my_bottom_tabbar_item_layout_style">
+
+            <ImageView
+                style="@style/my_bottom_tabbar_item_icon_style"
+                android:src="@drawable/selector_tabbar_icon_movie"/>
+
+            <TextView
+                style="@style/my_bottom_tabbar_item_text_style"
+                android:text="@string/movie"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/content_view_main_bottom_layout_tv_ll"
+            style="@style/my_bottom_tabbar_item_layout_style">
+
+            <ImageView
+                style="@style/my_bottom_tabbar_item_icon_style"
+                android:src="@drawable/selector_tabbar_icon_tv"/>
+
+            <TextView
+                style="@style/my_bottom_tabbar_item_text_style"
+                android:text="@string/tv_series"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/content_view_main_bottom_layout_ost_ll"
+            style="@style/my_bottom_tabbar_item_layout_style">
+
+            <ImageView
+                style="@style/my_bottom_tabbar_item_icon_style"
+                android:src="@drawable/selector_tabbar_icon_ost"/>
+
+            <TextView
+                style="@style/my_bottom_tabbar_item_text_style"
+                android:text="@string/ost"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
