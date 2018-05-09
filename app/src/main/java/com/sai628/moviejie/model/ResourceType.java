@@ -11,7 +11,7 @@ import java.util.List;
  * @Description: 资源类型
  * @date 09/05/2018 17:53
  */
-public class ResourceType
+public class ResourceType implements Model
 {
     protected String category;  // 类别名称
     protected List<ResourceInfo> resources;  // 资源列表
