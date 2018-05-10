@@ -104,7 +104,7 @@ configurations {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'com.google.code.gson:gson:2.8.4'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.okhttp:okhttp:2.7.5'
     implementation 'jp.wasabeef:picasso-transformations:2.1.0'
