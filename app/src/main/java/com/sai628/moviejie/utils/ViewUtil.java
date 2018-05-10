@@ -11,11 +11,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
 
+import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 
 public class ViewUtil
 {
     public static final long SCROLL_DELAY_TIME = 100L;
+    public static final long END_REFRESH_DELAY_TIME = 350L;
 
 
     public static Fragment getItem(ViewPager viewPager, int index)
@@ -73,7 +75,7 @@ public class ViewUtil
     }
 
 
-    public static int setCutViewHeightBasedOnChildrenNew1(View view, ListView listview)
+    public static int setCutViewHeightBasedOnChildren(View view, ListView listview)
     {
         ListAdapter listAdapter = listview.getAdapter();
 
@@ -150,10 +152,27 @@ public class ViewUtil
         view.setVisibility(View.GONE);
     }
 
-
     public static void scrollToTopDelayed(final ScrollView scrollView)
     {
         scrollToTopDelayed(scrollView, SCROLL_DELAY_TIME);
+    }
+
+
+    public static void endRefreshingDelayed(final BGARefreshLayout refreshLayout)
+    {
+        if (refreshLayout == null)
+        {
+            return;
+        }
+
+        refreshLayout.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                refreshLayout.endRefreshing();
+            }
+        }, END_REFRESH_DELAY_TIME);
     }
 
 

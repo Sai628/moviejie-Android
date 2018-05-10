@@ -4,20 +4,20 @@ import android.content.ContentValues;
 import android.content.Context;
 
 import com.sai628.moviejie.config.network.APIAddress;
-import com.sai628.moviejie.model.HotInfo;
 import com.sai628.moviejie.model.LinkDetailInfo;
 import com.sai628.moviejie.model.MovieInfo;
 import com.sai628.moviejie.model.MovieSimpleInfo;
-import com.sai628.moviejie.model.NewInfo;
 import com.sai628.moviejie.model.OSTInfo;
 import com.sai628.moviejie.model.OSTSimpleInfo;
+import com.sai628.moviejie.model.ResourceInfo;
+import com.sai628.moviejie.model.ResourceType;
+import com.sai628.moviejie.utils.CollectionUtil;
 import com.sai628.moviejie.utils.JSONUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 /**
@@ -40,13 +40,38 @@ public class NetService
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
             {
-                ArrayList<NewInfo> news = JSONUtil.readModels(jsonObject, "news", NewInfo.class);
-                ArrayList<HotInfo> hots = JSONUtil.readModels(jsonObject, "hots", HotInfo.class);
+                ArrayList<ResourceType> news = JSONUtil.readModels(jsonObject, "news", ResourceType.class);
+                ArrayList<ResourceType> hots = JSONUtil.readModels(jsonObject, "hots", ResourceType.class);
 
-                HashMap<String, Object> data = new HashMap<>();
-                data.put("news", news);
-                data.put("hots", hots);
-                NetHelper.dealWithSuccess(data, netCallback);
+                int newsSize = CollectionUtil.getSize(news);
+                int hotsSize = CollectionUtil.getSize(hots);
+                ArrayList<ResourceInfo> results = new ArrayList<>(newsSize + hotsSize);
+                if (news != null)
+                {
+                    for (ResourceType resourceType : news)
+                    {
+                        for (ResourceInfo resourceInfo : resourceType.getResources())
+                        {
+                            resourceInfo.setCategory(resourceType.getCategory());
+                            resourceInfo.setResourceType(ResourceInfo.Type.NEWS);
+                            results.add(resourceInfo);
+                        }
+                    }
+                }
+                if (hots != null)
+                {
+                    for (ResourceType resourceType : hots)
+                    {
+                        for (ResourceInfo resourceInfo : resourceType.getResources())
+                        {
+                            resourceInfo.setCategory(resourceType.getCategory());
+                            resourceInfo.setResourceType(ResourceInfo.Type.HOT);
+                            results.add(resourceInfo);
+                        }
+                    }
+                }
+
+                NetHelper.dealWithSuccess(results, netCallback);
             }
         });
     }

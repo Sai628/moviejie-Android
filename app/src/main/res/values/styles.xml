@@ -152,9 +152,9 @@
         <item name="android:textSize">@dimen/text_fontsize_normal</item>
     </style>
 
-    <!-- 默认列表样式（平角透明底带分隔线） -->
+    <!-- 默认列表样式（平角白底带分隔线） -->
     <style name="my_listview_style_default" parent="@android:style/Widget.ListView">
-        <item name="android:background">@color/transparent</item>
+        <item name="android:background">@color/white</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:cacheColorHint">@color/transparent</item>

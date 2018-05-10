@@ -1,48 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 主题色 -->
+    <!-- 布局/列表背景色 -->
     <color name="theme">#FF1AA0E1</color>
-
-    <!-- 视图布局背景色 -->
     <color name="layout_bg">#FFFFFFFF</color>
-    <!-- 导航栏背景色-->
     <color name="navbar_bg">#FFFFFFFF</color>
-    <!-- 导航栏菜单点击背景色 -->
     <color name="navbar_item_clicked_bg">#30000000</color>
-    <!-- 标签栏背景色 -->
     <color name="tabbar_bg">#FFFFFFFF</color>
-
-    <!-- 条项点按背景色 -->
     <color name="item_clicked_bg">#FFE4E4E4</color>
+    <color name="listview_header_bg">#FFF0F0F0</color>
+    <color name="listview_header_title">#FF959595</color>
 
-    <!-- 成功按钮普通状态背景色 -->
+    <!-- 按钮背景色 -->
     <color name="button_success_normal_bg">#FF73CB30</color>
-    <!-- 成功按钮点按状态背景色 -->
     <color name="button_success_press_bg">#8073CB30</color>
-
-    <!-- 原始按钮普通状态背景色 -->
     <color name="button_primary_normal_bg">#FF5677FC</color>
-    <!-- 原始按钮点按状态背景色 -->
     <color name="button_primary_press_bg">#805677FC</color>
 
-    <!-- 普通分割线色 -->
-    <color name="divide_line_common">#FFCCCCCC</color>
-    <!-- 特别分割线色 -->
+    <!-- UI元素颜色 -->
     <color name="divide_line_special">#ABCEED</color>
-
-    <!-- 对话框边框颜色 -->
+    <color name="divide_line_common">#FFCCCCCC</color>
     <color name="dialog_border_line_color">#DCDCDC</color>
-
-    <!-- 一级文字颜色 -->
-    <color name="text_primary">#FF222222</color>
-    <!-- 二级文字颜色-->
-    <color name="text_second">#FF666666</color>
-
-    <!-- 列表头部文字颜色 -->
-    <color name="text_list_header">#FFA0A0A0</color>
-    <!-- 没结果时的文字提示颜色 -->
-    <color name="text_empty_hint">#A2A2A2</color>
+    <color name="movie_mark_line">#FF008018</color>
+    <color name="link_mark_line">#FF006D9A</color>
+    <color name="link">#FF428BCA</color>
+    <color name="download_link_text">#FF31708F</color>
+    <color name="ratingbar">#FFF89F40</color>
+    <color name="ratingbar_empty">#FFC0C0C0</color>
+    <color name="search_keyword">#FF428BCA</color>
 
     <!-- 常用颜色 -->
     <color name="_222">#FF222222</color>
@@ -56,11 +41,11 @@
     <color name="_DDD">#FFDDDDDD</color>
     <color name="_EEE">#FFEEEEEE</color>
 
-    <color name="dark">#505050</color>
-    <color name="light_dark">#606060</color>
-    <color name="lighter_dark">#707070</color>
-    <color name="light">#888888</color>
-    <color name="light_white">#BBBBBB</color>
+    <color name="dark">#FF505050</color>
+    <color name="light_dark">#FF606060</color>
+    <color name="lighter_dark">#FF707070</color>
+    <color name="light">#FF888888</color>
+    <color name="light_white">#FFBBBBBB</color>
     <color name="milky">#FFE4E4E4</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hint">#C0C0C0</color>

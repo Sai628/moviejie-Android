@@ -88,19 +88,11 @@ android {
     }
 }
 
-
 repositories {
     flatDir {
         dirs 'libs'
     }
 }
-
-
-configurations {
-    all*.exclude group: 'com.android.support', module: 'support-v4'
-    all*.exclude group: 'com.android.support', module: 'support-annotations'
-}
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -108,6 +100,14 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.okhttp:okhttp:2.7.5'
     implementation 'jp.wasabeef:picasso-transformations:2.1.0'
+
+    implementation 'com.android.support:support-v4:27.0.1'
+    implementation 'com.android.support:support-v13:27.0.1'
+    implementation 'com.android.support:recyclerview-v7:27.0.1'
+    implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.8@aar'
+
+    implementation 'se.emilsjolander:stickylistheaders:2.7.0'
+    implementation 'me.zhanghai.android.materialratingbar:library:1.2.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

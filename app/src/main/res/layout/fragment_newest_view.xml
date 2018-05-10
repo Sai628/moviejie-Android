@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    style="@style/my_layout_style_common"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+        android:id="@+id/fragment_newest_view_listview"
+        style="@style/my_listview_style_default"
+        android:layout_height="match_parent"/>
+
+    <include layout="@layout/content_loading_menu"/>
+</FrameLayout>

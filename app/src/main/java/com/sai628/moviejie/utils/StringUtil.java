@@ -40,6 +40,27 @@ public class StringUtil
 
 
     /**
+     * 判断是否为数字
+     *
+     * @param str 待检测的字符串
+     * @return boolean
+     */
+    public static boolean isNumber(String str)
+    {
+        try
+        {
+            double v = Double.parseDouble(str);
+            return true;
+        }
+        catch (NumberFormatException e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    /**
      * 判断两个字符串值是否相等
      *
      * @param str1 参数1
@@ -207,6 +228,7 @@ public class StringUtil
 
     /**
      * 获取非空的URL. 若 url 参数为 null 或者空字符串时, 会返回 "http://"
+     *
      * @param url
      * @return
      */
