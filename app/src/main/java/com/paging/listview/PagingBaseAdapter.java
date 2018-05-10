@@ -1,24 +1,50 @@
 package com.paging.listview;
 
+import android.content.Context;
 import android.widget.BaseAdapter;
+
+import com.sai628.moviejie.utils.CollectionUtil;
 
 import java.util.List;
 
 
 public abstract class PagingBaseAdapter<T> extends BaseAdapter
 {
+    protected Context context;
     protected List<T> items;
 
 
     public PagingBaseAdapter()
     {
-        this(null);
+        this(null, null);
     }
 
 
-    public PagingBaseAdapter(List<T> items)
+    public PagingBaseAdapter(Context context, List<T> items)
     {
+        this.context = context;
         this.items = items;
+    }
+
+
+    @Override
+    public int getCount()
+    {
+        return CollectionUtil.getSize(items);
+    }
+
+
+    @Override
+    public Object getItem(int position)
+    {
+        return items.get(position);
+    }
+
+
+    @Override
+    public long getItemId(int position)
+    {
+        return position;
     }
 
 
@@ -60,6 +86,17 @@ public abstract class PagingBaseAdapter<T> extends BaseAdapter
     public void removeItem(int location)
     {
         this.items.remove(location);
+        notifyDataSetChanged();
+    }
+
+
+    public void replaceAllItems(List<T> newItems)
+    {
+        this.items.clear();
+        if (newItems != null && newItems.size() > 0)
+        {
+            this.items.addAll(newItems);
+        }
         notifyDataSetChanged();
     }
 

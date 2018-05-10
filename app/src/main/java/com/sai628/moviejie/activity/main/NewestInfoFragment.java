@@ -223,18 +223,16 @@ public class NewestInfoFragment extends BaseFragment implements LoadingMenu.OnRe
 
             titleTv.setText(resource.getTitle());  // 标题
             titleTv.setTextColor(titleColor);  // 标题颜色
-            if (StringUtil.isNumber(resource.getRating()))
+            if (StringUtil.isNumber(resource.getRating()))  // 有评分时
             {
                 starEmptyTipTv.setVisibility(View.INVISIBLE);
-
                 ratingBarTv.setText(resource.getRating());
                 ratingBar.setRating(Float.valueOf(resource.getRating()) / 2.0f);
                 ratingBar.setVisibility(View.VISIBLE);
             }
-            else
+            else  // 无评分时
             {
                 starEmptyTipTv.setVisibility(View.VISIBLE);
-
                 ratingBarTv.setText(null);
                 ratingBar.setVisibility(View.INVISIBLE);
             }

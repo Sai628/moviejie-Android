@@ -49,14 +49,14 @@ public class StringUtil
     {
         try
         {
-            double v = Double.parseDouble(str);
+            Double.parseDouble(str);
             return true;
         }
         catch (NumberFormatException e)
         {
-            e.printStackTrace();
-            return false;
         }
+
+        return false;
     }
 
 

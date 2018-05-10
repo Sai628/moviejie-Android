@@ -11,7 +11,7 @@ import com.squareup.picasso.RequestCreator;
 
 public class ImageLoaderUtil
 {
-    private static final int RESOURCE_ID_IMAGE_DEFAULT = R.drawable.icon_app;  //TODO
+    private static final int RESOURCE_ID_IMAGE_DEFAULT = R.drawable.icon_empty_image;
 
 
     public static void loadImage(Context context, ImageView imageView, String url)
