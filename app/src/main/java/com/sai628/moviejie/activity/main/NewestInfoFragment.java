@@ -2,6 +2,7 @@ package com.sai628.moviejie.activity.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import com.sai628.moviejie.activity.base.BaseFragment;
 import com.sai628.moviejie.model.ResourceInfo;
 import com.sai628.moviejie.service.net.NetHelper;
 import com.sai628.moviejie.service.net.NetService;
+import com.sai628.moviejie.utils.ContextUtil;
+import com.sai628.moviejie.utils.ToastUtil;
 import com.sai628.moviejie.view.LoadingMenu;
 import com.sai628.moviejie.viewadapter.NewestInfoListViewAdapter;
 
@@ -116,7 +119,20 @@ public class NewestInfoFragment extends BaseFragment implements LoadingMenu.OnRe
         public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         {
             ResourceInfo resourceInfo = resourceInfos.get(position);
-            //TODO
+            String movieLink = resourceInfo.getMovie_link();
+            String link = resourceInfo.getLink();
+            if (!TextUtils.isEmpty(movieLink))
+            {
+                ContextUtil.readMovieInfo(getActivity(), movieLink);
+            }
+            else if (!TextUtils.isEmpty(link))
+            {
+                //TODO
+            }
+            else
+            {
+                ToastUtil.show(getActivity(), "未支持");
+            }
         }
     };
 }

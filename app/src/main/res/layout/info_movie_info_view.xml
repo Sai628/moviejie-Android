@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/my_layout_navbar_style">
+
+        <ImageView
+            android:id="@+id/info_moview_info_view_back_imageview"
+            style="@style/my_navbar_item_back_menu_style"/>
+
+        <TextView
+            style="@style/my_navbar_title_text_style"
+            android:layout_centerInParent="true"
+            android:text="电影/电视剧"/>
+
+    </RelativeLayout>
+
+    <View style="@style/my_divide_line_style_horizontal"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0.49dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <include layout="@layout/content_view_movie_banner"/>
+
+                <include layout="@layout/content_view_movie_base_info"/>
+
+                <TextView
+                    android:id="@+id/info_movie_info_view_link_header_textview"
+                    style="@style/my_listview_header_text_style"
+                    android:text="下载链接"
+                    android:visibility="gone"/>
+
+                <com.sai628.moviejie.view.ListViewForScrollView
+                    android:id="@+id/info_movie_info_view_link_listview"
+                    style="@style/my_listview_style_default"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/info_movie_info_view_related_header_textview"
+                    style="@style/my_listview_header_text_style"
+                    android:text="相关影视"
+                    android:visibility="gone"/>
+
+                <com.sai628.moviejie.view.ListViewForScrollView
+                    android:id="@+id/info_movie_info_view_related_listview"
+                    style="@style/my_listview_style_default"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/info_movie_info_view_recommended_header_textview"
+                    style="@style/my_listview_header_text_style"
+                    android:text="猜你喜欢"
+                    android:visibility="gone"/>
+
+                <com.sai628.moviejie.view.ListViewForScrollView
+                    android:id="@+id/info_movie_info_view_recommended_listview"
+                    style="@style/my_listview_style_default"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/info_movie_info_view_story_header_textview"
+                    style="@style/my_listview_header_text_style"
+                    android:text="剧情简介"
+                    android:visibility="gone"/>
+
+                <com.sai628.moviejie.view.LetterSpacingTextView
+                    android:id="@+id/info_movie_info_view_story_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:paddingBottom="22dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="22dp"
+                    android:textColor="@color/_999"
+                    android:textSize="@dimen/text_normal"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <include layout="@layout/content_loading_menu"/>
+    </FrameLayout>
+</LinearLayout>

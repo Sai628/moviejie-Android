@@ -14,6 +14,7 @@ import com.sai628.moviejie.model.MovieSimpleInfo;
 import com.sai628.moviejie.service.net.NetHelper;
 import com.sai628.moviejie.service.net.NetService;
 import com.sai628.moviejie.utils.CollectionUtil;
+import com.sai628.moviejie.utils.ContextUtil;
 import com.sai628.moviejie.utils.ViewUtil;
 import com.sai628.moviejie.view.LoadingMenu;
 import com.sai628.moviejie.viewadapter.MovieListViewAdapter;
@@ -220,7 +221,8 @@ public class NewMovieFragment extends BaseFragment implements BGARefreshLayout.B
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         {
-            //TODO
+            MovieSimpleInfo movieSimpleInfo = (MovieSimpleInfo) parent.getAdapter().getItem(position);
+            ContextUtil.readMovieInfo(getActivity(), movieSimpleInfo.getMovie_link());
         }
     };
 

@@ -1,14 +1,26 @@
 package com.sai628.moviejie.utils;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Browser;
 
+import com.sai628.moviejie.activity.info.MovieInfoActivity;
+
 
 public class ContextUtil
 {
+    // 跳转到"电影/电视剧"信息视图
+    public static void readMovieInfo(Activity activity, String movieLink)
+    {
+        Intent intent = new Intent(activity, MovieInfoActivity.class);
+        intent.putExtra(MovieInfoActivity.EXTRA_MOVIE_LINK, movieLink);
+        activity.startActivity(intent);
+    }
+
+
     // 注销广播接收器
     public static void unregisterReceiver(Context context, BroadcastReceiver receiver)
     {

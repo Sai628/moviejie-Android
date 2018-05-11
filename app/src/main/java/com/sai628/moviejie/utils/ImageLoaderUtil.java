@@ -1,7 +1,6 @@
 package com.sai628.moviejie.utils;
 
 import android.content.Context;
-import android.support.annotation.IdRes;
 import android.widget.ImageView;
 
 import com.sai628.moviejie.R;
@@ -23,18 +22,6 @@ public class ImageLoaderUtil
     public static void loadImage(Context context, ImageView imageView, String url, int placeholderResID)
     {
         build(context, url, placeholderResID).centerInside().into(imageView);
-    }
-
-
-    public static void loadResourceImage(Context context, ImageView imageView, @IdRes int resourceId)
-    {
-        Picasso.with(context).load(resourceId).placeholder(RESOURCE_ID_IMAGE_DEFAULT).error(RESOURCE_ID_IMAGE_DEFAULT).fit().into(imageView);
-    }
-
-
-    public static void loadImageWithoutPlaceholder(Context context, ImageView imageView, String url)
-    {
-        build(context, url).centerInside().into(imageView);
     }
 
 

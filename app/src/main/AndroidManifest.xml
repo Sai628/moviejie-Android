@@ -47,5 +47,10 @@
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+
+        <!-- "电影/电视剧"信息视图 -->
+        <activity
+            android:name=".activity.info.MovieInfoActivity"
+            android:screenOrientation="portrait"/>
     </application>
 </manifest>

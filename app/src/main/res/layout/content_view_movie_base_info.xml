@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/content_view_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        tools:text="Title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/content_view_base_info_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="false"
+            android:textColor="@color/_AAA"
+            android:textSize="@dimen/text_tiny"
+            tools:text="bash info"/>
+
+        <LinearLayout
+            android:id="@+id/content_view_star_layout_ll"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:background="@color/_EEE">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="豆瓣评分"
+                android:textColor="@color/light_white"
+                android:textSize="@dimen/text_tiny"/>
+
+            <TextView
+                android:id="@+id/content_view_star_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:text="9.2"
+                tools:visibility="visible"/>
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:id="@+id/content_view_ratingbar"
+                style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
+                android:layout_width="66dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="4dp"
+                android:max="5"
+                android:numStars="5"
+                android:stepSize="0.1"
+                app:mrb_progressBackgroundTint="@color/ratingbar_empty"
+                app:mrb_progressTint="@color/ratingbar"
+                app:mrb_secondaryProgressTint="@color/ratingbar_empty"
+                app:mrb_secondaryProgressTintMode="src_in"
+                tools:rating="2.5"/>
+
+            <TextView
+                android:id="@+id/content_view_star_empty_tips_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="暂无评分"
+                android:textColor="@color/light_dark"
+                android:textSize="@dimen/text_tiny"
+                tools:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

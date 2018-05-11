@@ -11,6 +11,9 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
 
+import com.wangjie.shadowviewhelper.ShadowProperty;
+import com.wangjie.shadowviewhelper.ShadowViewHelper;
+
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 
@@ -152,6 +155,7 @@ public class ViewUtil
         view.setVisibility(View.GONE);
     }
 
+
     public static void scrollToTopDelayed(final ScrollView scrollView)
     {
         scrollToTopDelayed(scrollView, SCROLL_DELAY_TIME);
@@ -188,6 +192,21 @@ public class ViewUtil
                     scrollView.scrollTo(0, 0);
                 }
             }, delayMillis);
+        }
+    }
+
+
+    public static void bindShadow(View view, int color, int shadowDx, int shadowDy, int radius)
+    {
+        if (view != null)
+        {
+            ShadowProperty property = new ShadowProperty();
+            property.setShadowColor(color);
+            property.setShadowDx(shadowDx);
+            property.setShadowDy(shadowDy);
+            property.setShadowRadius(radius);
+
+            ShadowViewHelper.bindShadowHelper(property, view);
         }
     }
 }

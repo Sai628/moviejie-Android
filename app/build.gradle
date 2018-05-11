@@ -100,6 +100,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.okhttp:okhttp:2.7.5'
     implementation 'jp.wasabeef:picasso-transformations:2.1.0'
+    implementation 'com.github.wangjiegulu:ShadowViewHelper:1.0.1'
 
     implementation 'com.android.support:support-v4:27.0.1'
     implementation 'com.android.support:support-v13:27.0.1'
