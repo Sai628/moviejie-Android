@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/listview_item_imageview"
+        android:layout_width="80dp"
+        android:layout_height="110dp"
+        android:background="@color/_EEE"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/listview_item_imageview"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/listview_item_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textColor="@color/_333"
+            android:textSize="@dimen/text_fontsize_normal"
+            android:textStyle="bold"
+            tools:text="Title"/>
+
+        <TextView
+            android:id="@+id/listview_item_res_info_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text="MP3 | 312M"
+            android:textColor="@color/_999"
+            android:textSize="11sp"/>
+
+        <TextView
+            android:id="@+id/listview_item_country_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/_AAA"
+            android:textSize="@dimen/text_fontsize_tiny"
+            tools:text="地区/语言: 英国/英语"/>
+
+        <TextView
+            android:id="@+id/listview_item_publish_time_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/_AAA"
+            android:textSize="@dimen/text_fontsize_tiny"
+            tools:text="发行时间: 2009年09月01日"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    style="@style/my_layout_style_common"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/fragment_new_ost_view_refresh_layout"
+        style="@style/my_layout_style_common">
+
+        <com.paging.listview.PagingListView
+            android:id="@+id/fragment_new_ost_view_listview"
+            style="@style/my_listview_style_default"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+    <include layout="@layout/content_loading_menu"/>
+</FrameLayout>
