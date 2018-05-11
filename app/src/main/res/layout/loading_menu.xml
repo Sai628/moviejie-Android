@@ -27,7 +27,7 @@
             android:padding="@dimen/padding_medium"
             android:text="@string/empty_data_prompt"
             android:textColor="@color/hint"
-            android:textSize="@dimen/text_fontsize_normal"/>
+            android:textSize="@dimen/text_normal"/>
     </LinearLayout>
 
     <TextView
@@ -39,7 +39,7 @@
         android:padding="@dimen/padding_medium"
         android:text="@string/network_error_and_touch_retry"
         android:textColor="@color/hint"
-        android:textSize="@dimen/text_fontsize_normal"/>
+        android:textSize="@dimen/text_normal"/>
 
     <ProgressBar
         android:id="@+id/loading_menu_progressbar"

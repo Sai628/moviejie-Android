@@ -15,34 +15,6 @@
         <item name="android:background">@color/navbar_bg</item>
     </style>
 
-    <!-- 视图内容栏布局样式(四边有外间隔) -->
-    <style name="my_layout_content_margin_style" parent="@android:style/Widget">
-        <item name="android:layout_marginTop">@dimen/margin_top_size_default</item>
-        <item name="android:layout_marginBottom">@dimen/margin_bottom_size_default</item>
-        <item name="android:layout_marginLeft">@dimen/margin_medium</item>
-        <item name="android:layout_marginRight">@dimen/margin_medium</item>
-    </style>
-
-    <!-- 视图内容栏布局样式(上下有外间隔) -->
-    <style name="my_layout_content_margin_style_top_bottom" parent="@android:style/Widget">
-        <item name="android:layout_marginTop">@dimen/margin_top_size_default</item>
-        <item name="android:layout_marginBottom">@dimen/margin_bottom_size_default</item>
-    </style>
-
-    <!-- 视图内容栏布局样式(四边有内间隔) -->
-    <style name="my_layout_content_padding_style" parent="@android:style/Widget">
-        <item name="android:paddingLeft">@dimen/padding_medium</item>
-        <item name="android:paddingRight">@dimen/padding_medium</item>
-        <item name="android:paddingTop">@dimen/padding_small</item>
-        <item name="android:paddingBottom">@dimen/padding_small</item>
-    </style>
-
-    <!-- 视图内容栏布局样式（上下有内间隔） -->
-    <style name="my_layout_content_padding_style_top_bottom" parent="@android:style/Widget">
-        <item name="android:paddingTop">@dimen/padding_top_size_default</item>
-        <item name="android:paddingBottom">@dimen/padding_bottom_size_default</item>
-    </style>
-
     <!-- 列表子项内容分割线样式 -->
     <style name="my_listview_item_content_divide_view_style" parent="@android:style/Widget">
         <item name="android:layout_width">match_parent</item>
@@ -53,7 +25,7 @@
     <!-- 列表子项主题文字样式 -->
     <style name="my_listview_item_theme_text_style" parent="@android:style/Widget.TextView">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">@dimen/text_fontsize_normal</item>
+        <item name="android:textSize">@dimen/text_normal</item>
     </style>
 
     <!-- 视图顶部标题文字标签样式 -->
@@ -64,9 +36,7 @@
         <item name="android:textColor">@color/_333</item>
         <item name="android:gravity">center</item>
         <item name="android:singleLine">true</item>
-        <item name="android:paddingLeft">@dimen/padding_small</item>
-        <item name="android:paddingRight">@dimen/padding_small</item>
-        <item name="android:textSize">@dimen/text_fontsize_large</item>
+        <item name="android:textSize">@dimen/text_large</item>
     </style>
 
     <!-- 视图顶部项普通样式 -->
@@ -86,7 +56,7 @@
         <item name="android:paddingRight">@dimen/padding_medium</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@drawable/selector_text_color_nav_item</item>
-        <item name="android:textSize">@dimen/text_fontsize_small</item>
+        <item name="android:textSize">@dimen/text_small</item>
     </style>
 
     <!-- 视图顶部返回按钮样式 -->
@@ -107,8 +77,8 @@
 
     <!-- 视图底部标签菜单图标样式 -->
     <style name="my_bottom_tabbar_item_icon_style" parent="@android:style/Widget">
-        <item name="android:layout_width">@dimen/bottom_tabbar_icon_size</item>
-        <item name="android:layout_height">@dimen/bottom_tabbar_icon_size</item>
+        <item name="android:layout_width">@dimen/tabbar_icon_size</item>
+        <item name="android:layout_height">@dimen/tabbar_icon_size</item>
     </style>
 
     <!-- 视图底部标签菜单文字样式 -->
@@ -116,22 +86,22 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@drawable/selector_text_color_tabbar_item</item>
-        <item name="android:textSize">@dimen/text_fontsize_tiny</item>
-        <item name="android:layout_marginTop">@dimen/margin_micro</item>
+        <item name="android:textSize">@dimen/text_tiny</item>
+        <item name="android:layout_marginTop">2dp</item>
     </style>
 
     <!-- 按钮样式(成功) -->
     <style name="my_button_style_success" parent="@android:style/Widget">
         <item name="android:background">@drawable/button_success_bg_selector</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/text_fontsize_middle</item>
+        <item name="android:textSize">@dimen/text_middle</item>
     </style>
 
     <!-- 按钮样式(原始) -->
     <style name="my_button_style_primary" parent="@android:style/Widget">
         <item name="android:background">@drawable/button_primary_bg_selector</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/text_fontsize_middle</item>
+        <item name="android:textSize">@dimen/text_middle</item>
     </style>
 
     <!-- 输入框样式(搜索) -->
@@ -139,17 +109,17 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:textColor">@color/light_dark</item>
-        <item name="android:layout_marginBottom">@dimen/margin_small</item>
-        <item name="android:layout_marginTop">@dimen/margin_small</item>
-        <item name="android:paddingLeft">@dimen/padding_small</item>
-        <item name="android:paddingRight">@dimen/padding_medium</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">16dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textCursorDrawable">@drawable/edittext_theme_cursor_color</item>
         <item name="android:drawableLeft">@drawable/icon_search_normal</item>
-        <item name="android:drawablePadding">@dimen/padding_tiny</item>
+        <item name="android:drawablePadding">4dp</item>
         <item name="android:background">@drawable/bg_edittext_search</item>
         <item name="android:textColorHint">@color/hint</item>
-        <item name="android:textSize">@dimen/text_fontsize_normal</item>
+        <item name="android:textSize">@dimen/text_normal</item>
     </style>
 
     <!-- 默认列表样式（平角白底带分隔线） -->
@@ -167,8 +137,8 @@
 
     <!-- 列表条项右侧更多图标样式 -->
     <style name="my_listview_item_more_icon_style" parent="@android:style/Widget">
-        <item name="android:layout_width">@dimen/listitem_more_icon_size</item>
-        <item name="android:layout_height">@dimen/listitem_more_icon_size</item>
+        <item name="android:layout_width">@dimen/list_item_more_icon_size</item>
+        <item name="android:layout_height">@dimen/list_item_more_icon_size</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginRight">@dimen/margin_medium</item>
@@ -230,17 +200,17 @@
     <!-- 与对话框元素样式相关(开始) -->
     <style name="my_dialog_title_text_style" parent="@android:style/Widget">
         <item name="android:textColor">@color/blue</item>
-        <item name="android:textSize">@dimen/text_fontsize_middle</item>
+        <item name="android:textSize">@dimen/text_middle</item>
         <item name="android:textStyle">normal</item>
     </style>
 
     <style name="my_dialog_content_text_style" parent="@android:style/Widget">
         <item name="android:textColor">@color/lighter_dark</item>
-        <item name="android:textSize">@dimen/text_fontsize_middle</item>
+        <item name="android:textSize">@dimen/text_middle</item>
     </style>
 
     <style name="my_dialog_button_text_style_base">
-        <item name="android:textSize">@dimen/text_fontsize_normal</item>
+        <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:gravity">center</item>
     </style>
 

@@ -29,7 +29,7 @@
             android:gravity="center_vertical"
             android:maxLines="2"
             android:textColor="@color/_333"
-            android:textSize="@dimen/text_fontsize_normal"
+            android:textSize="@dimen/text_normal"
             android:textStyle="bold"
             tools:text="Title"/>
 
@@ -44,7 +44,7 @@
                 android:layout_gravity="center_vertical"
                 android:text="暂无评分"
                 android:textColor="@color/light_white"
-                android:textSize="@dimen/text_fontsize_tiny"/>
+                android:textSize="@dimen/text_tiny"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -60,12 +60,12 @@
                     android:layout_height="14dp"
                     android:max="5"
                     android:numStars="5"
-                    android:rating="2.5"
                     android:stepSize="0.1"
                     app:mrb_progressBackgroundTint="@color/ratingbar_empty"
                     app:mrb_progressTint="@color/ratingbar"
                     app:mrb_secondaryProgressTint="@color/ratingbar_empty"
-                    app:mrb_secondaryProgressTintMode="src_in"/>
+                    app:mrb_secondaryProgressTintMode="src_in"
+                    tools:rating="2.5"/>
 
                 <TextView
                     android:id="@+id/listview_item_ratingbar_textview"
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
                     android:textColor="@color/_AAA"
-                    android:textSize="@dimen/text_fontsize_tiny"
+                    android:textSize="@dimen/text_tiny"
                     tools:text="9.5"/>
             </LinearLayout>
         </FrameLayout>
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:textColor="@color/_AAA"
-            android:textSize="@dimen/text_fontsize_tiny"
+            android:textSize="@dimen/text_tiny"
             tools:text="类型: 纪录片"/>
 
         <TextView
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/_AAA"
-            android:textSize="@dimen/text_fontsize_tiny"
+            android:textSize="@dimen/text_tiny"
             tools:text="国家/地区: 中国"/>
     </LinearLayout>
 </RelativeLayout>

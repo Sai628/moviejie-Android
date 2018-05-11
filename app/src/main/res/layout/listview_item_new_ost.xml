@@ -28,7 +28,7 @@
             android:gravity="center_vertical"
             android:maxLines="2"
             android:textColor="@color/_333"
-            android:textSize="@dimen/text_fontsize_normal"
+            android:textSize="@dimen/text_normal"
             android:textStyle="bold"
             tools:text="Title"/>
 
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:textColor="@color/_AAA"
-            android:textSize="@dimen/text_fontsize_tiny"
+            android:textSize="@dimen/text_tiny"
             tools:text="地区/语言: 英国/英语"/>
 
         <TextView
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/_AAA"
-            android:textSize="@dimen/text_fontsize_tiny"
+            android:textSize="@dimen/text_tiny"
             tools:text="发行时间: 2009年09月01日"/>
     </LinearLayout>
 </RelativeLayout>

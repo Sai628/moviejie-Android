@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/bottom_layout_height"
+        android:layout_height="@dimen/tabbar_layout_height"
         android:background="@color/tabbar_bg"
         android:orientation="horizontal">
 

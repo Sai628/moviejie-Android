@@ -13,5 +13,5 @@
         android:text="@string/app_name"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="@dimen/text_fontsize_biger"/>
+        android:textSize="@dimen/text_biger"/>
 </LinearLayout>
