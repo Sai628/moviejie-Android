@@ -3,6 +3,7 @@ package com.sai628.moviejie.activity.info;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -161,11 +162,13 @@ public class LinkInfoActivity extends BaseActivity implements View.OnClickListen
 
             case R.id.info_link_info_view_copy_button:
                 SystemUtil.copyToClipboard(getThis(), linkDetailInfo.getDownload_link());
-                ToastUtil.show(getThis(), "下载链接已复制到剪贴板");
+                ToastUtil.show(getThis(), "已复制到剪贴板");
                 break;
 
             case R.id.info_link_info_view_thunder_button:
-                //TODO
+                String link = String.format("AA%sZZ", linkDetailInfo.getDownload_link());
+                String linkBase64 = Base64.encodeToString(link.getBytes(), Base64.NO_WRAP);
+                ContextUtil.openURL(getThis(), "thunder://" + linkBase64);
                 break;
         }
     }
