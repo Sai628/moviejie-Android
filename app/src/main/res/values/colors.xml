@@ -12,16 +12,12 @@
     <color name="listview_header_title">#FF959595</color>
 
     <!-- 按钮背景色 -->
-    <color name="button_success_normal_bg">#FF73CB30</color>
-    <color name="button_success_press_bg">#8073CB30</color>
-    <color name="button_primary_normal_bg">#FF5677FC</color>
-    <color name="button_primary_press_bg">#805677FC</color>
+    <color name="button_success_normal_bg">#FF5CB85C</color>
+    <color name="button_success_press_bg">#FF449D44</color>
 
     <!-- UI元素颜色 -->
-    <color name="divide_line_special">#ABCEED</color>
     <color name="divide_line_common">#FFCCCCCC</color>
     <color name="dialog_border_line_color">#DCDCDC</color>
-    <color name="movie_mark_line">#FF008018</color>
     <color name="link_mark_line">#FF006D9A</color>
     <color name="link">#FF428BCA</color>
     <color name="download_link_text">#FF31708F</color>
@@ -46,13 +42,10 @@
     <color name="lighter_dark">#FF707070</color>
     <color name="light">#FF888888</color>
     <color name="light_white">#FFBBBBBB</color>
-    <color name="milky">#FFE4E4E4</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hint">#C0C0C0</color>
     <color name="blue">#1F88D8</color>
     <color name="black">#FF000000</color>
     <color name="transparent">#00000000</color>
-    <color name="grey">#909090</color>
     <color name="light_grey">#FFAAAAAA</color>
-    <color name="light_green">#FF73CB30</color>
 </resources>

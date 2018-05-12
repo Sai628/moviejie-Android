@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 与应用信息有关的字符串常量 -->
+    <!-- 应用信息 -->
     <string name="app_name">电影街</string>
 
     <!-- 主视图 -->
@@ -10,64 +10,22 @@
     <string name="tv_series">电视剧</string>
     <string name="ost">原声大碟</string>
 
-    <!-- 搜索视图 -->
-
-    <!-- 与 窗口/按钮 提示相关 -->
-    <string name="quit">退出</string>
+    <!-- 窗口/按钮 -->
     <string name="prompt">提示</string>
     <string name="sure">确定</string>
-    <string name="retry">重试</string>
-    <string name="have_been_copy_to_clipboard">内容已复制到剪贴板</string>
-    <string name="copy">复制</string>
     <string name="cancel">取消</string>
-    <string name="ok">好</string>
-    <string name="i_know">我知道了</string>
-    <string name="enter">进入</string>
-    <string name="is_sure_quit">确定退出吗?</string>
 
-    <!-- 与加载对话框提示文字相关 -->
+    <!-- 加载对话框 -->
     <string name="in_loading">加载中&#8230;</string>
-    <string name="in_processing">处理中&#8230;</string>
-    <string name="in_checking">检测中&#8230;</string>
     <string name="in_searching">搜索中&#8230;</string>
-    <string name="getting">获取中&#8230;</string>
 
-    <!-- 与自定义View相关(开始) -->
-    <!-- 支持下拉刷新的ListView -->
-    <string name="drop_down_list_header_default_text">下拉刷新</string>
-    <string name="drop_down_list_header_pull_text">下拉刷新</string>
-    <string name="drop_down_list_header_release_text">松开刷新</string>
-    <string name="drop_down_list_header_loading_text">正在刷新&#8230;</string>
-    <string name="drop_down_list_footer_default_text">查看更多</string>
-    <string name="drop_down_list_footer_loading_text">加载中&#8230;</string>
-    <string name="drop_down_list_footer_no_more_text">没有更多了</string>
-
-    <!-- 支持瀑布流的ListView -->
-    <string name="xlistview_header_hint_normal">下拉刷新</string>
-    <string name="xlistview_header_hint_ready">松开刷新</string>
-    <string name="xlistview_header_hint_loading">正在刷新&#8230;</string>
-    <string name="xlistview_header_last_time">最新更新：</string>
-    <string name="xlistview_footer_hint_normal">查看更多</string>
-    <string name="xlistview_footer_hint_ready">松开查看更多</string>
-    <string name="xlistview_footer_hint_over">没有更多了</string>
-
-    <!-- 支持下拉刷新的ScrollView -->
-    <string name="refresh_down_text">下拉刷新</string>
-    <string name="refresh_release_text">松开刷新</string>
-
-    <!-- 加载提示布局的 LoadingMenu -->
+    <!-- LoadingMenu -->
     <string name="network_error_and_touch_retry">网络不佳&#160;&#160;点击屏幕重新加载？</string>
     <string name="empty_data_and_touch_retry">暂无数据&#160;&#160;点击屏幕可重新获取</string>
     <string name="empty_data_prompt">空空如也</string>
     <string name="not_found_result">没有找到结果</string>
-    <!-- 与自定义View相关(结束) -->
 
-    <!-- 与 SD卡/文件/系统 相关 -->
-    <string name="nonexistence_sdcard_status">SD卡不存在，请检查</string>
-    <string name="unavailable_sdcard_status">SD卡不可用，请检查</string>
-    <string name="open_file_failure_prompt">无法打开该文件，请下载相关软件</string>
-
-    <!-- 与TagGroup相关 -->
+    <!-- TagGroup -->
     <string name="add_tag">添加标签</string>
 
 </resources>
