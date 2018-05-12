@@ -269,7 +269,13 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         {
-            //TODO
+            //TODO 添加分集过滤功能
+
+            LinkInfo linkInfo = movieInfo.getLinks().get(position);
+            if (!TextUtils.isEmpty(linkInfo.getLink()))
+            {
+                ContextUtil.readLinkInfo(getThis(), linkInfo.getLink());
+            }
         }
     };
 

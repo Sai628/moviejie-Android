@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/my_layout_navbar_style">
+
+        <ImageView
+            android:id="@+id/info_link_info_view_back_imageview"
+            style="@style/my_navbar_item_back_menu_style"/>
+
+        <TextView
+            style="@style/my_navbar_title_text_style"
+            android:layout_centerInParent="true"
+            android:text="下载链接"/>
+
+    </RelativeLayout>
+
+    <View style="@style/my_divide_line_style_horizontal"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/info_link_info_view_title_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:textColor="@drawable/selector_text_color_link"
+                android:textSize="@dimen/text_middle"
+                tools:text="Movie Title"/>
+
+            <TextView
+                android:id="@+id/info_link_info_view_name_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_middle"
+                android:textStyle="bold"
+                tools:text="Link Name"/>
+
+            <TextView
+                android:id="@+id/info_link_info_view_size_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/_AAA"
+                android:textSize="@dimen/text_tiny"
+                tools:text="大小: 312M"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/_BBB"/>
+
+            <TextView
+                android:id="@+id/info_link_info_view_download_link_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/download_link_text"
+                android:textSize="@dimen/text_small"
+                tools:text="Download URL"/>
+
+            <Button
+                android:id="@+id/info_link_info_view_copy_button"
+                style="@style/my_button_style_success"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="30dp"
+                android:text="复制链接"
+                android:textSize="@dimen/text_large"/>
+
+            <Button
+                android:id="@+id/info_link_info_view_thunder_button"
+                style="@style/my_button_style_success"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="16dp"
+                android:text="迅雷下载"
+                android:textSize="@dimen/text_large"/>
+        </LinearLayout>
+
+        <include layout="@layout/content_loading_menu"/>
+    </FrameLayout>
+</LinearLayout>

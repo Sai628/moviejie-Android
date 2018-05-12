@@ -127,7 +127,7 @@ public class NewestInfoFragment extends BaseFragment implements LoadingMenu.OnRe
             }
             else if (!TextUtils.isEmpty(link))
             {
-                //TODO
+                ContextUtil.readLinkInfo(getActivity(), link);
             }
             else
             {

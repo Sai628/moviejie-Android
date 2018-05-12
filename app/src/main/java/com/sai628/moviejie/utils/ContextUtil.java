@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.provider.Browser;
 
+import com.sai628.moviejie.activity.info.LinkInfoActivity;
 import com.sai628.moviejie.activity.info.MovieInfoActivity;
 
 
@@ -17,6 +18,15 @@ public class ContextUtil
     {
         Intent intent = new Intent(activity, MovieInfoActivity.class);
         intent.putExtra(MovieInfoActivity.EXTRA_MOVIE_LINK, movieLink);
+        activity.startActivity(intent);
+    }
+
+
+    // 跳转到"下载链接"信息视图
+    public static void readLinkInfo(Activity activity, String link)
+    {
+        Intent intent = new Intent(activity, LinkInfoActivity.class);
+        intent.putExtra(LinkInfoActivity.EXTRA_LINK, link);
         activity.startActivity(intent);
     }
 
