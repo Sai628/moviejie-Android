@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -61,16 +62,15 @@ public class CollectionUtil
     }
 
 
-    public static ArrayList<String> toArrayList(String[] array)
+    public static <T> ArrayList<T> toArrayList(T[] array)
     {
-        ArrayList<String> list = new ArrayList<String>();
-        if (array != null && array.length > 0)
+        if (array == null || array.length == 0)
         {
-            for (String str : array)
-            {
-                list.add(str);
-            }
+            return null;
         }
+
+        ArrayList<T> list = new ArrayList<>(array.length);
+        list.addAll(Arrays.asList(array));
         return list;
     }
 

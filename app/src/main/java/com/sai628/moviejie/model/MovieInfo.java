@@ -12,7 +12,7 @@ import java.util.List;
  * @Description: 电影/电视剧信息model. 对应URL: /movie/<movie_id>/ 页面中的数据结构
  * @date 09/05/2018 18:28
  */
-public class MovieInfo implements Model
+public class MovieInfo
 {
     private String title;  // 标题
     private String banner;  // 封面图URL

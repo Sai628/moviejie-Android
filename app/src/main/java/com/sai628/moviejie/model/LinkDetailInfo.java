@@ -6,7 +6,7 @@ package com.sai628.moviejie.model;
  * @Description: 下载链接详情信息model. 对应URL: /link/<link_id>/ 页面中的数据结构
  * @date 09/05/2018 18:19
  */
-public class LinkDetailInfo implements Model
+public class LinkDetailInfo
 {
     private String movie_title;  // 电影标题
     private String movie_link;  // 电影/电视剧页面链接

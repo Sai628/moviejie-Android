@@ -11,7 +11,7 @@ import java.util.List;
  * @Description: 原声大碟信息model. 对应URL: /ost/<ost_id>/ 页面中的数据结构
  * @date 09/05/2018 18:44
  */
-public class OSTInfo implements Model
+public class OSTInfo
 {
     private String movie_name;  // 电影名称
     private String movie_link;  // 电影详情页面链接

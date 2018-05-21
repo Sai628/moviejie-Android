@@ -6,7 +6,7 @@ package com.sai628.moviejie.model;
  * @Description: 电影/电视剧简略信息model. 对应URL: /new/movie/ 与 /new/tv/ 页面中的数据结构
  * @date 09/05/2018 18:07
  */
-public class MovieSimpleInfo implements Model
+public class MovieSimpleInfo
 {
     private String title;  // 标题
     private String movie_link;  // 电影详情页面链接

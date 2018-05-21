@@ -30,8 +30,6 @@
 -dontwarn javax.xml.**
 -dontwarn javax.xml.stream.events.**
 
--dontwarn com.fasterxml.jackson.databind.**
-
 -keepattributes *Annotation*,EnclosingMethod
 
 -keep public class com.sai628.moviejie.R$*{
@@ -89,14 +87,6 @@
 -keep class * implements android.os.Parcelable {
   public static final android.os.Parcelable$Creator *;
 }
-
-
-#与jackson代码混淆相关
--keep class com.fasterxml.jackson.datebind*.** {*;}
--keep class com.fasterxml.jackson.core*.** {*;}
--keep class com.fasterxml.jackson.annotation*.** {*;}
--keep class com.fasterxml.jackson.databind.ext.*.** {*;}
--keep class org.w3c.dom.bootstrap.DOMImplementationRegistry {*;}
 
 
 -keep class org.apache.http.entity.mime.** {*;}

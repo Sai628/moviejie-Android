@@ -6,7 +6,7 @@ package com.sai628.moviejie.model;
  * @Description: 原声大碟简略信息model. 对应URL: /new/ost/ 页面中的数据结构
  * @date 09/05/2018 18:07
  */
-public class OSTSimpleInfo implements Model
+public class OSTSimpleInfo
 {
     private String movie_name;  // 电影名称
     private String ost_link;  // 原声大碟详情页面链接

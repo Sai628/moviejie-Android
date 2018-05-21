@@ -40,8 +40,8 @@ public class NetService
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
             {
-                ArrayList<ResourceType> news = JSONUtil.readModels(jsonObject, "news", ResourceType.class);
-                ArrayList<ResourceType> hots = JSONUtil.readModels(jsonObject, "hots", ResourceType.class);
+                ArrayList<ResourceType> news = JSONUtil.readModels(jsonObject, "news", ResourceType[].class);
+                ArrayList<ResourceType> hots = JSONUtil.readModels(jsonObject, "hots", ResourceType[].class);
 
                 int newsSize = CollectionUtil.getSize(news);
                 int hotsSize = CollectionUtil.getSize(hots);
@@ -150,7 +150,7 @@ public class NetService
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
             {
-                ArrayList<MovieSimpleInfo> movies = JSONUtil.readModels(jsonObject, "movies", MovieSimpleInfo.class);
+                ArrayList<MovieSimpleInfo> movies = JSONUtil.readModels(jsonObject, "movies", MovieSimpleInfo[].class);
                 NetHelper.dealWithSuccess(movies, netCallback);
             }
         });
@@ -170,7 +170,7 @@ public class NetService
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
             {
-                ArrayList<MovieSimpleInfo> movies = JSONUtil.readModels(jsonObject, "movies", MovieSimpleInfo.class);
+                ArrayList<MovieSimpleInfo> movies = JSONUtil.readModels(jsonObject, "movies", MovieSimpleInfo[].class);
                 NetHelper.dealWithSuccess(movies, netCallback);
             }
         });
@@ -190,7 +190,7 @@ public class NetService
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
             {
-                ArrayList<OSTSimpleInfo> ostInfos = JSONUtil.readModels(jsonObject, "ost_infos", OSTSimpleInfo.class);
+                ArrayList<OSTSimpleInfo> ostInfos = JSONUtil.readModels(jsonObject, "ost_infos", OSTSimpleInfo[].class);
                 NetHelper.dealWithSuccess(ostInfos, netCallback);
             }
         });
@@ -205,7 +205,7 @@ public class NetService
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
             {
-                ArrayList<MovieSimpleInfo> movies = JSONUtil.readModels(jsonObject, "movies", MovieSimpleInfo.class);
+                ArrayList<MovieSimpleInfo> movies = JSONUtil.readModels(jsonObject, "movies", MovieSimpleInfo[].class);
                 NetHelper.dealWithSuccess(movies, netCallback);
             }
         });

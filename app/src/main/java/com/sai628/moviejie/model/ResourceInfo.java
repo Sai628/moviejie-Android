@@ -6,7 +6,7 @@ package com.sai628.moviejie.model;
  * @Description: 资源信息model. 对应于首页的"更新/热门"资源数据结构
  * @date 09/05/2018 17:47
  */
-public class ResourceInfo implements Model
+public class ResourceInfo
 {
     public enum Type
     {
