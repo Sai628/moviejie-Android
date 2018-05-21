@@ -1,13 +1,13 @@
 package com.sai628.moviejie.activity.base;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.sai628.moviejie.service.net.UnsafeOkHttpClient;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
 
 
-public class AppContext extends Application
+public class AppContext extends MultiDexApplication
 {
     private static AppContext instance;
 
