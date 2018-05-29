@@ -57,5 +57,10 @@
         <activity
             android:name=".activity.info.LinkInfoActivity"
             android:screenOrientation="portrait"/>
+
+        <!-- "原声大碟"信息视图 -->
+        <activity
+            android:name=".activity.info.OSTInfoActivity"
+            android:screenOrientation="portrait"/>
     </application>
 </manifest>

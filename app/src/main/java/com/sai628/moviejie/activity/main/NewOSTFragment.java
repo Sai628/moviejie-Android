@@ -14,6 +14,7 @@ import com.sai628.moviejie.model.OSTSimpleInfo;
 import com.sai628.moviejie.service.net.NetHelper;
 import com.sai628.moviejie.service.net.NetService;
 import com.sai628.moviejie.utils.CollectionUtil;
+import com.sai628.moviejie.utils.ContextUtil;
 import com.sai628.moviejie.utils.ViewUtil;
 import com.sai628.moviejie.view.LoadingMenu;
 import com.sai628.moviejie.viewadapter.OSTListViewAdapter;
@@ -220,7 +221,8 @@ public class NewOSTFragment extends BaseFragment implements BGARefreshLayout.BGA
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         {
-            //TODO
+            OSTSimpleInfo ostSimpleInfo = (OSTSimpleInfo) parent.getAdapter().getItem(position);
+            ContextUtil.readOSTInfo(getActivity(), ostSimpleInfo.getOst_link());
         }
     };
 

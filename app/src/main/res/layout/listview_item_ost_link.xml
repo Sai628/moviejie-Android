@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingBottom="6dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="6dp">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/listview_item_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:singleLine="false"
+            android:textColor="@color/link"
+            android:textSize="@dimen/text_small"
+            tools:text="Title"/>
+
+        <TextView
+            android:id="@+id/listview_item_size_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/listview_item_name_textview"
+            android:layout_marginTop="2dp"
+            android:gravity="right"
+            android:textColor="@color/light_white"
+            android:textSize="@dimen/text_tiny"
+            tools:text="312M"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/listview_item_more_imageview"
+        android:layout_width="24dp"
+        android:layout_height="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="-4dp"
+        android:src="@drawable/icon_more"/>
+</LinearLayout>
