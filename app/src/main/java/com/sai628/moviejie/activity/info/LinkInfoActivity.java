@@ -16,8 +16,9 @@ import com.sai628.moviejie.service.net.NetHelper;
 import com.sai628.moviejie.service.net.NetService;
 import com.sai628.moviejie.utils.ContextUtil;
 import com.sai628.moviejie.utils.SystemUtil;
-import com.sai628.moviejie.utils.ToastUtil;
 import com.sai628.moviejie.view.LoadingMenu;
+
+import es.dmoral.toasty.Toasty;
 
 
 /**
@@ -162,7 +163,7 @@ public class LinkInfoActivity extends BaseActivity implements View.OnClickListen
 
             case R.id.info_link_info_view_copy_button:
                 SystemUtil.copyToClipboard(getThis(), linkDetailInfo.getDownload_link());
-                ToastUtil.show(getThis(), "已复制到剪贴板");
+                Toasty.success(getThis(), "已复制到剪贴板").show();
                 break;
 
             case R.id.info_link_info_view_thunder_button:

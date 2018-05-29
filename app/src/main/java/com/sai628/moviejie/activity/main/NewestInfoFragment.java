@@ -14,12 +14,12 @@ import com.sai628.moviejie.model.ResourceInfo;
 import com.sai628.moviejie.service.net.NetHelper;
 import com.sai628.moviejie.service.net.NetService;
 import com.sai628.moviejie.utils.ContextUtil;
-import com.sai628.moviejie.utils.ToastUtil;
 import com.sai628.moviejie.view.LoadingMenu;
 import com.sai628.moviejie.viewadapter.NewestInfoListViewAdapter;
 
 import java.util.ArrayList;
 
+import es.dmoral.toasty.Toasty;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
 
@@ -131,7 +131,10 @@ public class NewestInfoFragment extends BaseFragment implements LoadingMenu.OnRe
             }
             else
             {
-                ToastUtil.show(getActivity(), "未支持");
+                if (getActivity() != null)
+                {
+                    Toasty.error(getActivity(), "未支持").show();
+                }
             }
         }
     };

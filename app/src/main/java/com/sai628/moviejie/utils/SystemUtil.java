@@ -19,6 +19,8 @@ import android.view.WindowManager;
 
 import java.util.List;
 
+import es.dmoral.toasty.Toasty;
+
 
 /**
  * @author Sai
@@ -177,7 +179,7 @@ public class SystemUtil
         catch (ActivityNotFoundException e)
         {
             e.printStackTrace();
-            ToastUtil.show(context, "没有找到适合的市场应用,请自行下载");
+            Toasty.info(context, "没有找到适合的市场应用,请自行下载").show();
         }
     }
 
