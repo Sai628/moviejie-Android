@@ -199,7 +199,7 @@ public class NetService
 
     public static void search(Context context, String keyword, String page, final NetHelper.NetCallback netCallback)
     {
-        String url = String.format("%sq_%s/%s", APIAddress.SEARCH, keyword, page);
+        String url = String.format("%sq_%s/%s/", APIAddress.SEARCH, keyword, page);
         NetHelper.get(context, url, netCallback, new NetHelper.SuccessHandler()
         {
             @Override

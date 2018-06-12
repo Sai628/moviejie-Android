@@ -1,15 +1,18 @@
 package com.sai628.moviejie.activity.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sai628.moviejie.R;
 import com.sai628.moviejie.activity.base.BaseFragmentActivity;
+import com.sai628.moviejie.activity.search.SearchActivity;
 import com.sai628.moviejie.utils.ContextUtil;
 
 import java.util.ArrayList;
@@ -35,6 +38,7 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
     };
 
     private TextView titleTv;
+    private ImageView searchIv;
     private ArrayList<View> tabViews;
 
     private NewestInfoFragment newestInfoFragment;
@@ -58,6 +62,8 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
     private void initView()
     {
         titleTv = findViewById(R.id.main_view_title_textview);
+        searchIv = findViewById(R.id.main_view_search_imageview);
+        searchIv.setOnClickListener(this);
 
         tabViews = new ArrayList<>(titleResIDs.length);
         tabViews.add(findViewById(R.id.content_view_main_bottom_layout_newest_ll));
@@ -171,7 +177,10 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
     {
         switch (v.getId())
         {
-            //TODO
+            case R.id.main_view_search_imageview:
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
+                break;
+
             default:
                 break;
         }

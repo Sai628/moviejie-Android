@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/my_layout_navbar_style"
+        android:orientation="horizontal">
+
+        <com.sai628.moviejie.view.ClearEditText
+            android:id="@+id/search_view_search_edittext"
+            style="@style/my_edittext_style_search"
+            android:layout_width="0dp"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="搜索电影"
+            android:imeOptions="actionSearch"/>
+
+        <TextView
+            android:id="@+id/search_view_cancel_textview"
+            style="@style/my_navbar_item_textmenu_style"
+            android:text="@string/cancel"/>
+    </LinearLayout>
+
+    <View style="@style/my_divide_line_style_horizontal"/>
+
+    <LinearLayout
+        android:id="@+id/search_view_history_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="false"
+                android:text="搜索历史"
+                android:textColor="@color/_999"
+                android:textSize="@dimen/text_small"/>
+
+            <ImageView
+                android:id="@+id/search_view_clearup_imageview"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/icon_clearup_selector"/>
+
+        </LinearLayout>
+
+        <com.sai628.moviejie.view.TagGroup
+            android:id="@+id/search_view_history_taggroup"
+            style="@style/TagGroup.Search"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</LinearLayout>

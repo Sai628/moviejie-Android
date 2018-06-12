@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/my_layout_style_common"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/my_layout_navbar_style">
+
+        <ImageView
+            android:id="@+id/search_result_view_back_imageview"
+            style="@style/my_navbar_item_back_menu_style"/>
+
+        <TextView
+            android:id="@+id/search_result_view_title_textview"
+            style="@style/my_navbar_title_text_style"
+            android:layout_centerInParent="true"
+            android:text="搜索"/>
+    </RelativeLayout>
+
+    <View style="@style/my_divide_line_style_horizontal"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.paging.listview.PagingListView
+            android:id="@+id/search_result_view_listview"
+            style="@style/my_listview_style_default"/>
+
+        <include layout="@layout/content_loading_menu"/>
+    </FrameLayout>
+</LinearLayout>

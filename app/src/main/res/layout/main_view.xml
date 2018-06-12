@@ -16,6 +16,11 @@
             android:layout_centerInParent="true"
             tools:text="@string/renewal"/>
 
+        <ImageView
+            android:id="@+id/main_view_search_imageview"
+            style="@style/my_navbar_item_search_menu_style"
+            android:layout_alignParentRight="true"/>
+
     </RelativeLayout>
 
     <View style="@style/my_divide_line_style_horizontal"/>

@@ -28,4 +28,6 @@
     <!-- TagGroup -->
     <string name="add_tag">添加标签</string>
 
+    <string name="text_match_color">#428BCA</string>
+
 </resources>

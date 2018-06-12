@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    style="@style/my_layout_style_common"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/layout_bg"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -18,7 +16,6 @@
             style="@style/my_navbar_title_text_style"
             android:layout_centerInParent="true"
             android:text="下载链接"/>
-
     </RelativeLayout>
 
     <View style="@style/my_divide_line_style_horizontal"/>

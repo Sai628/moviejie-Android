@@ -69,7 +69,7 @@ public class NewMovieFragment extends BaseFragment implements BGARefreshLayout.B
         refreshLayout.setDelegate(this);
         refreshLayout.setRefreshViewHolder(refreshViewHolder);
 
-        movieListViewAdapter = new MovieListViewAdapter(getActivity(), movieSimpleInfos);
+        movieListViewAdapter = new MovieListViewAdapter(getActivity(), movieSimpleInfos, null);
         movieListView.setAdapter(movieListViewAdapter);
         movieListView.setHasMoreItems(false);
         movieListView.setPagingableListener(pagingableListener);

@@ -62,5 +62,15 @@
         <activity
             android:name=".activity.info.OSTInfoActivity"
             android:screenOrientation="portrait"/>
+
+        <!-- "搜索"视图 -->
+        <activity
+            android:name=".activity.search.SearchActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- "搜索结果"视图 -->
+        <activity
+            android:name=".activity.search.SearchResultActivity"
+            android:screenOrientation="portrait"/>
     </application>
 </manifest>

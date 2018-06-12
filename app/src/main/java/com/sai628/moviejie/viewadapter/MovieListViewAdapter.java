@@ -1,6 +1,7 @@
 package com.sai628.moviejie.viewadapter;
 
 import android.content.Context;
+import android.text.Spanned;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import com.paging.listview.PagingBaseAdapter;
 import com.sai628.moviejie.R;
 import com.sai628.moviejie.model.MovieSimpleInfo;
+import com.sai628.moviejie.utils.HtmlUtil;
 import com.sai628.moviejie.utils.ImageLoaderUtil;
 import com.sai628.moviejie.utils.StringUtil;
 
@@ -25,9 +27,13 @@ import me.zhanghai.android.materialratingbar.MaterialRatingBar;
  */
 public class MovieListViewAdapter extends PagingBaseAdapter<MovieSimpleInfo>
 {
-    public MovieListViewAdapter(Context context, List<MovieSimpleInfo> movieSimpleInfos)
+    private String keyword;
+
+
+    public MovieListViewAdapter(Context context, List<MovieSimpleInfo> movieSimpleInfos, String keyword)
     {
         super(context, movieSimpleInfos);
+        this.keyword = keyword;
     }
 
 
@@ -46,7 +52,9 @@ public class MovieListViewAdapter extends PagingBaseAdapter<MovieSimpleInfo>
         TextView countryTv = helper.getView(R.id.listview_item_country_textview);
 
         ImageLoaderUtil.loadImage(context, bannerIv, movieSimpleInfo.getBanner());
-        titleTv.setText(movieSimpleInfo.getTitle());  // 标题
+
+        Spanned titleSpanned = HtmlUtil.formatHtml(context, movieSimpleInfo.getTitle(), keyword, R.string.text_match_color);
+        titleTv.setText(titleSpanned);  // 标题
         if (StringUtil.isNumber(movieSimpleInfo.getStar()))  // 有评分时
         {
             starEmptyTipTv.setVisibility(View.INVISIBLE);
