@@ -1,6 +1,7 @@
 package com.sai628.moviejie.activity.info;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.sai628.moviejie.R;
@@ -29,7 +31,9 @@ import com.sai628.moviejie.viewadapter.CommonAdapter;
 import com.sai628.moviejie.viewadapter.ViewHolderHelper;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import jp.wasabeef.picasso.transformations.BlurTransformation;
 import jp.wasabeef.picasso.transformations.ColorFilterTransformation;
@@ -46,7 +50,12 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
 {
     public static final String EXTRA_MOVIE_LINK = "movie_link";
 
+    private static final int REQUEST_CODE_EPISODE_FILTER = 0;
+
     private ImageView backIv;
+    private TextView episodeFilterMenu;
+
+    private ScrollView scrollView;
 
     private ImageView bannerBgIv;
     private ImageView bannerIv;
@@ -69,7 +78,9 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
 
     private LoadingMenu loadingMenu;
 
+    private MovieLinkListViewAdapter linkListViewAdapter;
     private MovieInfo movieInfo;
+    private String currentEpisode = "";  // 当前分集(默认为空, 表示显示全部的分集)
     private String movieLink;
 
 
@@ -96,6 +107,10 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
     {
         backIv = findViewById(R.id.info_moview_info_view_back_imageview);
         backIv.setOnClickListener(this);
+        episodeFilterMenu = findViewById(R.id.info_movie_info_view_episode_filter_textview);
+        episodeFilterMenu.setOnClickListener(this);
+
+        scrollView = findViewById(R.id.info_movie_info_view_scrollview);
 
         bannerBgIv = findViewById(R.id.content_view_banner_bg_imageview);
         bannerIv = findViewById(R.id.content_view_banner_imageview);
@@ -124,6 +139,12 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
     private void updateUI(MovieInfo info)
     {
         movieInfo = info;
+
+        // "分集"菜单
+        if (CollectionUtil.getSize(movieInfo.getEpisode_filters()) > 0)
+        {
+            episodeFilterMenu.setVisibility(View.VISIBLE);
+        }
 
         // Banner
         Picasso.with(this).load(StringUtil.getNotEmptyUrl(movieInfo.getBanner()))
@@ -158,7 +179,8 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
         {
             linkHeaderTv.setVisibility(View.VISIBLE);
             linkListView.setVisibility(View.VISIBLE);
-            linkListView.setAdapter(new MovieLinkListViewAdapter(this, linkInfos));
+            linkListViewAdapter = new MovieLinkListViewAdapter(this, linkInfos);
+            linkListView.setAdapter(linkListViewAdapter);
             linkListView.setOnItemClickListener(movieLinkListViewOnItemClickListener);
         }
 
@@ -210,6 +232,34 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
     }
 
 
+    private List<LinkInfo> filterLinks(List<LinkInfo> linkInfos, String episode)
+    {
+        ArrayList<LinkInfo> filterLinks = new ArrayList<>();
+        if (CollectionUtil.isEmpty(linkInfos))
+        {
+            return filterLinks;
+        }
+
+        if (episode.equals("all"))  // 全部分集
+        {
+            filterLinks.addAll(linkInfos);
+        }
+        else
+        {
+            // 过滤出选中的分集
+            for (LinkInfo linkInfo : linkInfos)
+            {
+                if (linkInfo.getEpisode().equals(episode))
+                {
+                    filterLinks.add(linkInfo);
+                }
+            }
+        }
+
+        return filterLinks;
+    }
+
+
     private void loadMovieInfo()
     {
         NetService.getMovieInfo(this, movieLink, new NetHelper.NetCallback()
@@ -245,6 +295,15 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
     }
 
 
+    private void doEpisodeFilter()
+    {
+        Intent intent = new Intent(this, EpisodeFilterActivity.class);
+        intent.putExtra(EpisodeFilterActivity.EXTRA_EPISODE_FILTERS, new ArrayList<>(movieInfo.getEpisode_filters()));
+        intent.putExtra(EpisodeFilterActivity.EXTRA_SELECTED_EPISODE, currentEpisode);
+        startActivityForResult(intent, REQUEST_CODE_EPISODE_FILTER);
+    }
+
+
     @Override
     public void onRetryClick(View v)
     {
@@ -260,6 +319,37 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
             case R.id.info_moview_info_view_back_imageview:
                 finish();
                 break;
+
+            case R.id.info_movie_info_view_episode_filter_textview:
+                doEpisodeFilter();
+                break;
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE_EPISODE_FILTER)
+        {
+            currentEpisode = data.getStringExtra(EpisodeFilterActivity.EXTRA_SELECTED_EPISODE);
+            String currentEpisodeText = data.getStringExtra(EpisodeFilterActivity.EXTRA_EPISODE_TEXT);
+
+            List<LinkInfo> filterLinks = filterLinks(movieInfo.getLinks(), currentEpisode);
+            linkHeaderTv.setVisibility(filterLinks.size() > 0 ? View.VISIBLE : View.GONE);
+            linkHeaderTv.setText(String.format(Locale.CHINA, "下载链接 %s", currentEpisodeText));
+
+            linkListViewAdapter.replaceAll(filterLinks);
+            linkListView.setVisibility(filterLinks.size() > 0 ? View.VISIBLE : View.GONE);
+            scrollView.post(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    scrollView.scrollTo(0, linkHeaderTv.getTop());
+                }
+            });
         }
     }
 
@@ -269,9 +359,7 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         {
-            //TODO 添加分集过滤功能
-
-            LinkInfo linkInfo = movieInfo.getLinks().get(position);
+            LinkInfo linkInfo = (LinkInfo) parent.getItemAtPosition(position);
             if (!TextUtils.isEmpty(linkInfo.getLink()))
             {
                 ContextUtil.readLinkInfo(getThis(), linkInfo.getLink());
@@ -285,7 +373,7 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         {
-            ResourceInfo resourceInfo = movieInfo.getRelated_resources().get(position);
+            ResourceInfo resourceInfo = (ResourceInfo) parent.getItemAtPosition(position);
             ContextUtil.readMovieInfo(getThis(), resourceInfo.getMovie_link());
         }
     };
@@ -296,7 +384,7 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         {
-            ResourceInfo resourceInfo = movieInfo.getRecommended_resources().get(position);
+            ResourceInfo resourceInfo = (ResourceInfo) parent.getItemAtPosition(position);
             ContextUtil.readMovieInfo(getThis(), resourceInfo.getMovie_link());
         }
     };

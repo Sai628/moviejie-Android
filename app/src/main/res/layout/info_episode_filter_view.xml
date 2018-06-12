@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/my_layout_style_common"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/my_layout_navbar_style">
+
+        <ImageView
+            android:id="@+id/info_episode_filter_view_back_imageview"
+            style="@style/my_navbar_item_back_menu_style"/>
+
+        <TextView
+            style="@style/my_navbar_title_text_style"
+            android:layout_centerInParent="true"
+            android:text="分集查看"/>
+    </RelativeLayout>
+
+    <View style="@style/my_divide_line_style_horizontal"/>
+
+    <GridView
+        android:id="@+id/info_episode_filter_view_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:cacheColorHint="@color/transparent"
+        android:horizontalSpacing="16dp"
+        android:listSelector="@color/transparent"
+        android:numColumns="5"
+        android:padding="16dp"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="16dp"/>
+</LinearLayout>

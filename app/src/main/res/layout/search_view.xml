@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/search_view_cancel_textview"
-            style="@style/my_navbar_item_textmenu_style"
+            style="@style/my_navbar_item_textmenu_cancel_style"
             android:text="@string/cancel"/>
     </LinearLayout>
 

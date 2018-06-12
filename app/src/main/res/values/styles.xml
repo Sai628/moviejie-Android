@@ -55,7 +55,11 @@
         <item name="android:paddingRight">@dimen/padding_medium</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@drawable/selector_text_color_nav_item</item>
-        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+    </style>
+
+    <style name="my_navbar_item_textmenu_cancel_style" parent="@style/my_navbar_item_textmenu_style">
+        <item name="android:textColor">@drawable/selector_text_color_cancel</item>
     </style>
 
     <!-- 视图顶部"返回"按钮样式 -->

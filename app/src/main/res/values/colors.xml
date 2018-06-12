@@ -2,7 +2,7 @@
 <resources>
 
     <!-- 布局/列表背景色 -->
-    <color name="theme">#FF1AA0E1</color>
+    <color name="theme">#FF428BCA</color>
     <color name="layout_bg">#FFFFFFFF</color>
     <color name="navbar_bg">#FFFFFFFF</color>
     <color name="navbar_item_clicked_bg">#30000000</color>
@@ -18,12 +18,10 @@
     <!-- UI元素颜色 -->
     <color name="divide_line_common">#FFCCCCCC</color>
     <color name="dialog_border_line_color">#DCDCDC</color>
-    <color name="link_mark_line">#FF006D9A</color>
     <color name="link">#FF428BCA</color>
     <color name="download_link_text">#FF31708F</color>
     <color name="ratingbar">#FFF89F40</color>
     <color name="ratingbar_empty">#FFC0C0C0</color>
-    <color name="search_keyword">#FF428BCA</color>
 
     <!-- 常用颜色 -->
     <color name="_222">#FF222222</color>

@@ -19,11 +19,8 @@
     <dimen name="tabbar_layout_height">54dp</dimen>
     <dimen name="tabbar_icon_size">24dp</dimen>
 
-    <!-- 列表项 -->
-    <dimen name="list_item_more_icon_size">20dp</dimen>
-
-    <!-- 按钮高度 -->
-    <dimen name="button_height">42dp</dimen>
+    <!-- 分集子项大小 -->
+    <dimen name="gridview_item_episode_filter_size">56dp</dimen>
 
     <!-- 自定义对话框的宽度 -->
     <dimen name="custom_dialog_component_width">270dp</dimen>

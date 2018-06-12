@@ -53,6 +53,11 @@
             android:name=".activity.info.MovieInfoActivity"
             android:screenOrientation="portrait"/>
 
+        <!-- "分集过滤"视图 -->
+        <activity
+            android:name=".activity.info.EpisodeFilterActivity"
+            android:screenOrientation="portrait"/>
+
         <!-- "下载链接"信息视图 -->
         <activity
             android:name=".activity.info.LinkInfoActivity"
