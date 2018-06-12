@@ -6,7 +6,7 @@ An android app for moviejie: https://moviejie.net
 
 * Android Studio 3.0+
 * minSdkVersion: 14
-# targetSdkVersion: 27
+* targetSdkVersion: 27
 
 # Preview
 
