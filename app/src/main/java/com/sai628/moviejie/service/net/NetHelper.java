@@ -10,7 +10,9 @@ import com.android.volley.Response;
 import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
+import com.sai628.moviejie.config.Constants;
 import com.sai628.moviejie.config.network.ErrorInfo;
+import com.sai628.moviejie.utils.ACache;
 import com.sai628.moviejie.utils.LogUtil;
 import com.sai628.moviejie.utils.NetUtil;
 import com.sai628.moviejie.utils.StringUtil;
@@ -165,13 +167,45 @@ public class NetHelper
 
     public static void get(final Context context, final String url, final NetCallback netCallback, final SuccessHandler handler)
     {
-        get(context, url, null, netCallback, handler);
+        get(context, url, false, netCallback, handler);
     }
 
+
+    public static void get(final Context context, final String url, boolean cacheResult,
+                           final NetCallback netCallback, final SuccessHandler handler)
+    {
+        get(context, url, null, cacheResult, netCallback, handler);
+    }
 
     public static void get(final Context context, final String url, final ContentValues values,
                            final NetCallback netCallback, final SuccessHandler handler)
     {
+        get(context, url, values, false, netCallback, handler);
+    }
+
+
+    public static void get(final Context context, final String url, final ContentValues values, final boolean cacheResult,
+                           final NetCallback netCallback, final SuccessHandler handler)
+    {
+        // 若这个请求需要进行缓存时, 先尝试从全局缓存中获取数据
+        String cache = ACache.get(context).getAsString(url);
+        if (cacheResult && cache != null)
+        {
+            LogUtil.d(TAG, "找到缓存数据.");
+            try
+            {
+                JSONObject jsonObject = new JSONObject(cache);
+                handler.onSuccess(context, values, jsonObject);
+            }
+            catch (JSONException e)
+            {
+                e.printStackTrace();
+                dealWithFailure(new ParseError(), netCallback);
+            }
+
+            return;
+        }
+
         NetUtil.get(context, url, values, new Response.Listener<String>()
         {
             @Override
@@ -185,6 +219,12 @@ public class NetHelper
                     if (!hasError && handler != null)
                     {
                         handler.onSuccess(context, values, jsonObject);
+                    }
+
+                    // 若需对请求结果进行缓存时, 将其添加到全局缓存中
+                    if (cacheResult)
+                    {
+                        ACache.get(context).put(url, result, Constants.CACHE_EXPIRE_TIME);
                     }
                 }
                 catch (JSONException e)

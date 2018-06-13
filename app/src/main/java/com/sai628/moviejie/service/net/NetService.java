@@ -85,7 +85,7 @@ public class NetService
      */
     public static void getMovieInfo(Context context, String movieLink, final NetHelper.NetCallback netCallback)
     {
-        NetHelper.get(context, APIAddress.API_DOMAIN + movieLink, netCallback, new NetHelper.SuccessHandler()
+        NetHelper.get(context, APIAddress.API_DOMAIN + movieLink, true, netCallback, new NetHelper.SuccessHandler()
         {
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
@@ -105,7 +105,7 @@ public class NetService
      */
     public static void getLinkDetailInfo(Context context, String link, final NetHelper.NetCallback netCallback)
     {
-        NetHelper.get(context, APIAddress.API_DOMAIN + link, netCallback, new NetHelper.SuccessHandler()
+        NetHelper.get(context, APIAddress.API_DOMAIN + link, true, netCallback, new NetHelper.SuccessHandler()
         {
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
@@ -125,7 +125,7 @@ public class NetService
      */
     public static void getOSTInfo(Context context, String ostLink, final NetHelper.NetCallback netCallback)
     {
-        NetHelper.get(context, APIAddress.API_DOMAIN + ostLink, netCallback, new NetHelper.SuccessHandler()
+        NetHelper.get(context, APIAddress.API_DOMAIN + ostLink, true, netCallback, new NetHelper.SuccessHandler()
         {
             @Override
             public void onSuccess(Context context, ContentValues values, JSONObject jsonObject) throws JSONException
