@@ -106,3 +106,11 @@
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
+
+
+-dontwarn cn.bingoogolapple.**
+-dontwarn okio.**
+
+-keep class cn.bingoogolapple.**{*;}
+-keep class okio.**{*;}
+
