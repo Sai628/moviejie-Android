@@ -213,6 +213,16 @@ public class MovieInfoActivity extends BaseActivity implements View.OnClickListe
             storyTv.setSpacing(2f);
             storyTv.setText(story);
         }
+
+        // 自动滚动到最顶部, 解决显示页面时因列表项过长而定位不正确的问题
+        scrollView.post(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                scrollView.scrollTo(0, 0);
+            }
+        });
     }
 
 
