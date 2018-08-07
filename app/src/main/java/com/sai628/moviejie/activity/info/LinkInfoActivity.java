@@ -1,5 +1,6 @@
 package com.sai628.moviejie.activity.info;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ import com.sai628.moviejie.service.net.NetHelper;
 import com.sai628.moviejie.service.net.NetService;
 import com.sai628.moviejie.utils.ContextUtil;
 import com.sai628.moviejie.utils.SystemUtil;
+import com.sai628.moviejie.view.CustomDialog;
 import com.sai628.moviejie.view.LoadingMenu;
 
 import es.dmoral.toasty.Toasty;
@@ -137,6 +139,28 @@ public class LinkInfoActivity extends BaseActivity implements View.OnClickListen
     }
 
 
+    private void showNotFoundAppDialog(String appName, final String packageName)
+    {
+        CustomDialog.showDialog(this, getString(R.string.prompt), String.format("\"%s\"应用没安装或版本过低, 立即下载?", appName),
+                getString(R.string.download_now), new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                        ContextUtil.openURL(getThis(), getString(R.string.thunder_download_page_url));
+                    }
+                }, getString(R.string.cancel), new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                    }
+                });
+    }
+
+
     @Override
     public void onRetryClick(View v)
     {
@@ -167,9 +191,16 @@ public class LinkInfoActivity extends BaseActivity implements View.OnClickListen
                 break;
 
             case R.id.info_link_info_view_thunder_button:
-                String link = String.format("AA%sZZ", linkDetailInfo.getDownload_link());
-                String linkBase64 = Base64.encodeToString(link.getBytes(), Base64.NO_WRAP);
-                ContextUtil.openURL(getThis(), "thunder://" + linkBase64);
+                if (SystemUtil.isInstallPackage(this, getString(R.string.thunder_package_name)))
+                {
+                    String link = String.format("AA%sZZ", linkDetailInfo.getDownload_link());
+                    String linkBase64 = Base64.encodeToString(link.getBytes(), Base64.NO_WRAP);
+                    ContextUtil.openURL(getThis(), "thunder://" + linkBase64);
+                }
+                else
+                {
+                    showNotFoundAppDialog(getString(R.string.thunder_app_name), getString(R.string.thunder_package_name));
+                }
                 break;
         }
     }
